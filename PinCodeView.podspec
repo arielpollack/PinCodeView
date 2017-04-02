@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
 	Main use case is input for codes received in SMS/email etc.
                    DESC
   s.homepage     = "http://www.github.com/arielpollack/PinCodeView"
-  s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author       = { "Ariel Pollack" => "pollack.ariel@gmail.com" }
   s.platform     = :ios, '9.0'
-  s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => s.version.to_s }
   s.source_files = "Source/", "Source/*.swift"
 
 end
