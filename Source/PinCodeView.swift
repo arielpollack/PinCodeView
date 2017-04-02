@@ -26,7 +26,6 @@ class PinCodeView: UIControl {
     @IBInspectable var numberOfDigits: Int = 6
     @IBInspectable var groupingSize: Int = 3
     @IBInspectable var spacing: Int = 2
-    @IBInspectable var itemWidth: Int = 2
     var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
         // default impl
         
