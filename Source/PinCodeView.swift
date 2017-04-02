@@ -30,6 +30,7 @@ class PinCodeView: UIControl {
     @IBInspectable var numberOfDigits: Int = 6
     @IBInspectable var groupingSize: Int = 3
     @IBInspectable var spacing: Int = 2
+    @IBInspectable var itemWidth: Int = 2
     var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
         // default impl
 
@@ -50,7 +51,7 @@ class PinCodeView: UIControl {
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.axis = .horizontal
         sv.spacing = CGFloat(self.spacing)
-        sv.distribution = .fillEqually
+        sv.distribution = .fill
         return sv
     }()
     fileprivate var digitViews = [PinCodeDigitView]()
@@ -80,7 +81,6 @@ class PinCodeView: UIControl {
 
     private func configure() {
         configureDigitStackView()
-
         configureGestures()
     }
 
@@ -102,6 +102,8 @@ class PinCodeView: UIControl {
     }
 
     private func configureDigitViews() {
+        digitStackView.spacing = CGFloat(spacing)
+
         digitStackView.arrangedSubviews.forEach { view in
             digitStackView.removeArrangedSubview(view)
             view.removeFromSuperview()
@@ -282,8 +284,7 @@ extension PinCodeView: UIKeyInput {
             digitState = .inserting(index - 1)
 
         case .finished:
-            digitState = .inserting(numberOfDigits - 1)
-            deleteBackward()
+            digitState = .inserting(0)
 
         default: break
         }

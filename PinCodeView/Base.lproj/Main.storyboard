@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
-                                <rect key="frame" x="20" y="50" width="335" height="80"/>
+                                <rect key="frame" x="20" y="50" width="335" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="kSi-5Q-sCD"/>
+                                    <constraint firstAttribute="height" constant="67" id="kSi-5Q-sCD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfDigits">
