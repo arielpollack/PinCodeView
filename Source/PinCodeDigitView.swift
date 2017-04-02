@@ -8,16 +8,16 @@
 
 import UIKit
 
-class PinCodeDigitView: UILabel {
-
-    typealias ViewConfigBlock = (State, PinCodeDigitView)->()
-
-    enum State {
+public class PinCodeDigitView: UILabel {
+    
+    public typealias ViewConfigBlock = (State, PinCodeDigitView)->()
+    
+    public enum State {
         case empty
         case hasDigit
         case failedVerification
     }
-
+    
     var viewConfig: ViewConfigBlock! { didSet { configure() } }
     var state: State = .empty {
         didSet {
@@ -33,18 +33,14 @@ class PinCodeDigitView: UILabel {
             self.text = digit
         }
     }
-
-    init(viewConfig: @escaping ViewConfigBlock) {
-        super.init(frame: .zero)
+    
+    convenience init(viewConfig: @escaping ViewConfigBlock) {
+        self.init(frame: .zero)
         self.viewConfig = viewConfig
         self.textAlignment = .center
         self.configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     private func configure() {
         self.viewConfig(state, self)
     }

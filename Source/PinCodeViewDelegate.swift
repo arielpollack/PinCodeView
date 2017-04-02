@@ -6,7 +6,7 @@
 //  Copyright © 2017 Dapulse. All rights reserved.
 //
 
-protocol PinCodeViewDelegate: class {
+public protocol PinCodeViewDelegate: class {
     func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool)->Void)
     func pinCodeView(_ view: PinCodeView, didInsertText text: String)
 }

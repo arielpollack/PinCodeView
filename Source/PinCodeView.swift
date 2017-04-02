@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PinCodeView: UIStackView {
+public class PinCodeView: UIStackView {
     
-    enum TextType {
+    public enum TextType {
         case numbers
         case numbersAndLetters
     }
@@ -21,12 +21,12 @@ class PinCodeView: UIStackView {
         case disabled
     }
     
-    weak var delegate: PinCodeViewDelegate?
-    var textType: TextType = .numbers
-    @IBInspectable var numberOfDigits: Int = 6
-    @IBInspectable var groupingSize: Int = 3
-    @IBInspectable var itemSpacing: Int = 2
-    var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
+    public weak var delegate: PinCodeViewDelegate?
+    public var textType: TextType = .numbers
+    @IBInspectable public var numberOfDigits: Int = 6
+    @IBInspectable public var groupingSize: Int = 3
+    @IBInspectable public var itemSpacing: Int = 2
+    public var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
         // default impl
         
         view.layer.borderWidth = 1
@@ -50,7 +50,7 @@ class PinCodeView: UIStackView {
         }
     }
     
-    init(numberOfDigits: Int = 6, textType: TextType = .numbers, groupingSize: Int = 3, itemSpacing: Int = 2) {
+    public init(numberOfDigits: Int = 6, textType: TextType = .numbers, groupingSize: Int = 3, itemSpacing: Int = 2) {
         super.init(frame: .zero)
         
         self.numberOfDigits = numberOfDigits
@@ -61,12 +61,12 @@ class PinCodeView: UIStackView {
         configure()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
-    required init(coder: NSCoder) {
+    required public init(coder: NSCoder) {
         super.init(coder: coder)
         configure()
     }
@@ -115,7 +115,7 @@ class PinCodeView: UIStackView {
     }
     
     private var didLayoutSubviews = false
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         if !didLayoutSubviews {
@@ -169,7 +169,7 @@ class PinCodeView: UIStackView {
 }
 
 extension PinCodeView {
-    override func paste(_ sender: Any?) {
+    override public func paste(_ sender: Any?) {
         guard let string = UIPasteboard.general.string else { return }
         let text: String
         switch textType{
@@ -183,15 +183,15 @@ extension PinCodeView {
         insertText(text)
     }
     
-    override var canBecomeFirstResponder: Bool {
+    override public var canBecomeFirstResponder: Bool {
         return true
     }
     
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return action == #selector(paste(_:))
     }
     
-    var keyboardType: UIKeyboardType {
+    public var keyboardType: UIKeyboardType {
         get {
             switch textType {
             case .numbers:
@@ -270,6 +270,8 @@ extension PinCodeView: UIKeyInput {
     }
     
     public func deleteBackward() {
+        delegate?.pinCodeView(self, didInsertText: "")
+        
         switch digitState {
         case .inserting(let index) where index > 0:
             let digitView = digitViews[index - 1]
