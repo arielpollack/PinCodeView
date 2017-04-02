@@ -14,6 +14,8 @@ class PinCodeSeparatorView: UILabel {
         super.init(frame: .zero)
         self.text = text
         self.font = UIFont.systemFont(ofSize: 30)
+        self.textAlignment = .center
+        self.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
         self.sizeToFit()
     }
     

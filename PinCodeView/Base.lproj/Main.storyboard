@@ -43,6 +43,9 @@
                             <constraint firstAttribute="trailing" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pinView" destination="nnW-L7-vBh" id="aui-TP-vc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
