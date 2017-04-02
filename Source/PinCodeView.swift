@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PinCodeView: UIControl {
+class PinCodeView: UIStackView {
     
     enum TextType {
         case numbers
@@ -25,7 +25,7 @@ class PinCodeView: UIControl {
     var textType: TextType = .numbers
     @IBInspectable var numberOfDigits: Int = 6
     @IBInspectable var groupingSize: Int = 3
-    @IBInspectable var spacing: Int = 2
+    @IBInspectable var itemSpacing: Int = 2
     var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
         // default impl
         
@@ -41,14 +41,6 @@ class PinCodeView: UIControl {
         }
     }
     
-    fileprivate lazy var digitStackView: UIStackView = {
-        let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.axis = .horizontal
-        sv.spacing = CGFloat(self.spacing)
-        sv.distribution = .fill
-        return sv
-    }()
     fileprivate var digitViews = [PinCodeDigitView]()
     fileprivate var digitState: State = .inserting(0) {
         didSet {
@@ -58,33 +50,33 @@ class PinCodeView: UIControl {
         }
     }
     
-    init(numberOfDigits: Int = 6, textType: TextType = .numbers, groupingSize: Int = 3, spacing: Int = 2) {
+    init(numberOfDigits: Int = 6, textType: TextType = .numbers, groupingSize: Int = 3, itemSpacing: Int = 2) {
         super.init(frame: .zero)
         
         self.numberOfDigits = numberOfDigits
         self.textType = textType
         self.groupingSize = groupingSize
-        self.spacing = spacing
+        self.itemSpacing = itemSpacing
         
         configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
         configure()
     }
     
     private func configure() {
-        configureDigitStackView()
+        self.axis = .horizontal
+        self.distribution = .fill
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         configureGestures()
-    }
-    
-    private func configureDigitStackView() {
-        addSubview(digitStackView)
-        digitStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        digitStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        digitStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        digitStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     private func configureGestures() {
@@ -97,10 +89,10 @@ class PinCodeView: UIControl {
     }
     
     private func configureDigitViews() {
-        digitStackView.spacing = CGFloat(spacing)
+        self.spacing = CGFloat(itemSpacing)
         
-        digitStackView.arrangedSubviews.forEach { view in
-            digitStackView.removeArrangedSubview(view)
+        self.arrangedSubviews.forEach { view in
+            self.removeArrangedSubview(view)
             view.removeFromSuperview()
         }
         
@@ -109,7 +101,7 @@ class PinCodeView: UIControl {
         for _ in 0..<numberOfDigits {
             let digitView = PinCodeDigitView(viewConfig: self.viewConfig)
             digitView.translatesAutoresizingMaskIntoConstraints = false
-            digitStackView.addArrangedSubview(digitView)
+            self.addArrangedSubview(digitView)
             digitViews.append(digitView)
         }
         
@@ -117,7 +109,7 @@ class PinCodeView: UIControl {
             // TODO: better custom separators
             for idx in stride(from: groupingSize, to: numberOfDigits, by: groupingSize).reversed() {
                 let separator = PinCodeSeparatorView(text: "-")
-                digitStackView.insertArrangedSubview(separator, at: idx)
+                self.insertArrangedSubview(separator, at: idx)
             }
         }
     }
@@ -192,7 +184,7 @@ extension PinCodeView {
     }
     
     override var canBecomeFirstResponder: Bool {
-        return isEnabled
+        return true
     }
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {

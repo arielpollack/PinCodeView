@@ -15,7 +15,7 @@ class ViewController: UIViewController {
             pinView.delegate = self
             pinView.numberOfDigits = 6
             pinView.groupingSize = 3
-            pinView.spacing = 7
+            pinView.itemSpacing = 7
             pinView.viewConfig = { state, view in
                 view.font = UIFont.systemFont(ofSize: 30)
                 view.layer.borderWidth = 2
@@ -42,12 +42,10 @@ extension ViewController: PinCodeViewDelegate {
     func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
         
         view.alpha = 0.5
-        view.isEnabled = false
         
         // check server for code validity, etc
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             view.alpha = 1
-            view.isEnabled = true
             
             callback(false)
         }
