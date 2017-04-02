@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "http://www.github.com/arielpollack/PinCodeView"
   s.license      = "MIT"
-  s.author             = { "Ariel Pollack" => "pollack.ariel@gmail.com" }
-  s.platform     = :ios
-  s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => "#{s.version}" }
-  s.source_files  = "Source/", "Source/*.swift"
+  s.author       = { "Ariel Pollack" => "pollack.ariel@gmail.com" }
+  s.platform     = :ios, '9.0'
+  s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => ${s.version} }
+  s.source_files = "Source/", "Source/*.swift"
 
 end
