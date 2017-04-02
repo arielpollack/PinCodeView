@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PinCodeViewDelegate: class {
-    func pinCodeView(view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool)->Void)
-}
-
 class PinCodeView: UIControl {
     
     enum TextType {
@@ -168,7 +164,7 @@ class PinCodeView: UIControl {
     
     func submitDigits() {
         digitState = .disabled
-        delegate?.pinCodeView(view: self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
+        delegate?.pinCodeView(self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
             // we don't care about valid, the delegate will do something
             guard !isValid, let zelf = self else { return }
             
@@ -234,6 +230,7 @@ extension PinCodeView: UIKeyInput {
         switch textType {
         case .numbers:
             validCharacterSet = .decimalDigits
+            
         case .numbersAndLetters:
             validCharacterSet = .alphanumerics
         }
@@ -256,6 +253,8 @@ extension PinCodeView: UIKeyInput {
         }
         
         guard isValidText(text) else { return }
+        
+        delegate?.pinCodeView(self, didInsertText: text)
         
         // state machine
         switch digitState {

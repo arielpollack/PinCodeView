@@ -15,6 +15,7 @@
 		B07CD58F1E90F2C200677A5F /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */; };
 		B07CD5911E90FE3B00677A5F /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD5901E90FE3B00677A5F /* PinCodeView.swift */; };
 		B07CD5931E91175800677A5F /* PinCodeSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */; };
+		B09ED6E71E917EAA009E9844 /* PinCodeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09ED6E61E917EAA009E9844 /* PinCodeViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
 		B07CD5901E90FE3B00677A5F /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeSeparatorView.swift; sourceTree = "<group>"; };
+		B09ED6E61E917EAA009E9844 /* PinCodeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */,
 				B07CD5901E90FE3B00677A5F /* PinCodeView.swift */,
+				B09ED6E61E917EAA009E9844 /* PinCodeViewDelegate.swift */,
 				B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */,
 			);
 			path = Source;
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09ED6E71E917EAA009E9844 /* PinCodeViewDelegate.swift in Sources */,
 				B07CD58F1E90F2C200677A5F /* PinCodeDigitView.swift in Sources */,
 				B07CD5931E91175800677A5F /* PinCodeSeparatorView.swift in Sources */,
 				B07CD5911E90FE3B00677A5F /* PinCodeView.swift in Sources */,
