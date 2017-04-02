@@ -12,6 +12,9 @@
 		B07CD5811E90F27100677A5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CD57F1E90F27100677A5F /* Main.storyboard */; };
 		B07CD5831E90F27100677A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5821E90F27100677A5F /* Assets.xcassets */; };
 		B07CD5861E90F27100677A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5841E90F27100677A5F /* LaunchScreen.storyboard */; };
+		B07CD58F1E90F2C200677A5F /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */; };
+		B07CD5911E90FE3B00677A5F /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD5901E90FE3B00677A5F /* PinCodeView.swift */; };
+		B07CD5931E91175800677A5F /* PinCodeSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		B07CD5821E90F27100677A5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B07CD5851E90F27100677A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07CD5871E90F27100677A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
+		B07CD5901E90FE3B00677A5F /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
+		B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeSeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		B07CD56F1E90F27100677A5F = {
 			isa = PBXGroup;
 			children = (
+				B07CD58D1E90F27D00677A5F /* Source */,
 				B07CD57A1E90F27100677A5F /* PinCodeView */,
 				B07CD5791E90F27100677A5F /* Products */,
 			);
@@ -62,6 +69,16 @@
 				B07CD5871E90F27100677A5F /* Info.plist */,
 			);
 			path = PinCodeView;
+			sourceTree = "<group>";
+		};
+		B07CD58D1E90F27D00677A5F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B07CD58E1E90F2C200677A5F /* PinCodeDigitView.swift */,
+				B07CD5901E90FE3B00677A5F /* PinCodeView.swift */,
+				B07CD5921E91175800677A5F /* PinCodeSeparatorView.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +113,7 @@
 				TargetAttributes = {
 					B07CD5771E90F27100677A5F = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = F92RQULD22;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,6 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07CD58F1E90F2C200677A5F /* PinCodeDigitView.swift in Sources */,
+				B07CD5931E91175800677A5F /* PinCodeSeparatorView.swift in Sources */,
+				B07CD5911E90FE3B00677A5F /* PinCodeView.swift in Sources */,
 				B07CD57E1E90F27100677A5F /* ViewController.swift in Sources */,
 				B07CD57C1E90F27100677A5F /* AppDelegate.swift in Sources */,
 			);
@@ -262,7 +283,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F92RQULD22;
 				INFOPLIST_FILE = PinCodeView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,7 +297,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F92RQULD22;
 				INFOPLIST_FILE = PinCodeView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,6 +326,7 @@
 				B07CD58C1E90F27100677A5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
