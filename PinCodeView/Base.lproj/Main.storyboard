@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
-                                <rect key="frame" x="20" y="50" width="335" height="67"/>
+                                <rect key="frame" x="20" y="126" width="335" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="kSi-5Q-sCD"/>
                                 </constraints>
@@ -35,11 +35,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the PIN your received by SMS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-6C-Dh1">
+                                <rect key="frame" x="49" y="50" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="0Iw-gH-JgW"/>
                             <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
+                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="8hS-V3-tmD"/>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="kD9-6C-Dh1" secondAttribute="bottom" constant="55" id="ZU0-Ax-msx"/>
+                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGX-rb-5e7"/>
                             <constraint firstAttribute="trailing" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
                         </constraints>
                     </view>
