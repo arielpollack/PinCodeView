@@ -85,7 +85,7 @@ public protocol PinCodeDigitView: class {
 
 ## License
 
-`PinCodeView` is distributed under the terms and conditions of the [MIT license](https://github.com/SVProgressHUD/SVProgressHUD/blob/master/LICENSE.txt).
+`PinCodeView` is distributed under the terms and conditions of the [MIT license](LICENSE.md).
 
 ## Credits
 
