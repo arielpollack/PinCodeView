@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
+		B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeDigitSquareView.swift; path = ../../Source/PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
 		B01938211E918896006D3856 /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeSeparatorView.swift; sourceTree = "<group>"; };
 		B01938231E918896006D3856 /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		B01938241E918896006D3856 /* PinCodeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,6 @@
 		B019381E1E918896006D3856 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */,
 				B01938211E918896006D3856 /* PinCodeSeparatorView.swift */,
 				B01938231E918896006D3856 /* PinCodeView.swift */,
 				B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */,
@@ -79,6 +78,7 @@
 			children = (
 				B019381E1E918896006D3856 /* Source */,
 				B07CD57B1E90F27100677A5F /* AppDelegate.swift */,
+				B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */,
 				B07CD57D1E90F27100677A5F /* ViewController.swift */,
 				B07CD57F1E90F27100677A5F /* Main.storyboard */,
 				B07CD5821E90F27100677A5F /* Assets.xcassets */,
