@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PinCodeView"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary 	 = "A drop in view for pin code input"
   s.description  = <<-DESC
 	A drop in view for getting pin code from the user.
