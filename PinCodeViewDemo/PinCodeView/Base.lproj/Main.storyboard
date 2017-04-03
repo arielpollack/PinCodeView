@@ -21,9 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
-                                <rect key="frame" x="20" y="126" width="335" height="67"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="126" width="200" height="67"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="386-th-uIY"/>
                                     <constraint firstAttribute="height" constant="67" id="kSi-5Q-sCD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -44,11 +45,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Vc-R8-Z1v"/>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
                             <constraint firstItem="kD9-6C-Dh1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="8hS-V3-tmD"/>
                             <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="kD9-6C-Dh1" secondAttribute="bottom" constant="55" id="ZU0-Ax-msx"/>
                             <constraint firstItem="kD9-6C-Dh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGX-rb-5e7"/>
-                            <constraint firstAttribute="trailing" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
                         </constraints>
                     </view>
                     <connections>

@@ -8,6 +8,12 @@
 
 import UIKit
 
+public enum PinCodeDigitViewState {
+    case empty
+    case hasDigit
+    case failedVerification
+}
+
 public class PinCodeView: UIStackView {
     
     public enum TextType {
@@ -22,24 +28,22 @@ public class PinCodeView: UIStackView {
     }
     
     public weak var delegate: PinCodeViewDelegate?
+    /// support numbers and alphanumeric
     public var textType: TextType = .numbers
-    @IBInspectable public var numberOfDigits: Int = 6
-    @IBInspectable public var groupingSize: Int = 3
-    @IBInspectable public var itemSpacing: Int = 2
-    public var viewConfig: PinCodeDigitView.ViewConfigBlock = { state, view in
-        // default impl
-        
-        view.layer.borderWidth = 1
-        view.font = UIFont.systemFont(ofSize: 20)
-        
-        switch state {
-        case .empty, .hasDigit:
-            view.layer.borderColor = UIColor.blue.cgColor
-            
-        case .failedVerification:
-            view.layer.borderColor = UIColor.red.cgColor
-        }
-    }
+    
+    /// initializer for the single digit views
+    public var digitViewInit: ((Void) -> PinCodeDigitView)!
+    
+    /// pretty straightforward
+    public var numberOfDigits: Int = 6
+    
+    /// group size for separating digits
+    /// for example:
+    /// group size of 3 will give ___ - ___
+    public var groupingSize: Int = 3
+    
+    /// space between items
+    public var itemSpacing: Int = 2
     
     fileprivate var digitViews = [PinCodeDigitView]()
     fileprivate var digitState: State = .inserting(0) {
@@ -89,6 +93,8 @@ public class PinCodeView: UIStackView {
     }
     
     private func configureDigitViews() {
+        assert(digitViewInit != nil, "must provide a single digit view initializer")
+        
         self.spacing = CGFloat(itemSpacing)
         
         self.arrangedSubviews.forEach { view in
@@ -99,9 +105,9 @@ public class PinCodeView: UIStackView {
         digitViews = []
         
         for _ in 0..<numberOfDigits {
-            let digitView = PinCodeDigitView(viewConfig: self.viewConfig)
-            digitView.translatesAutoresizingMaskIntoConstraints = false
-            self.addArrangedSubview(digitView)
+            let digitView = digitViewInit()
+            digitView.view.translatesAutoresizingMaskIntoConstraints = false
+            self.addArrangedSubview(digitView.view)
             digitViews.append(digitView)
         }
         
@@ -239,8 +245,9 @@ extension PinCodeView: UIKeyInput {
             validCharacterSet = .alphanumerics
         }
         
-        guard validCharacterSet.contains(UnicodeScalar(text)!) else {
-            return false
+        guard let scalar = UnicodeScalar(text),
+            validCharacterSet.contains(scalar) else {
+                return false
         }
         
         return true
