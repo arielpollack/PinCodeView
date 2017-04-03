@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B01938261E918896006D3856 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */; };
 		B01938271E918896006D3856 /* PinCodeSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938211E918896006D3856 /* PinCodeSeparatorView.swift */; };
 		B01938281E918896006D3856 /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938231E918896006D3856 /* PinCodeView.swift */; };
 		B01938291E918896006D3856 /* PinCodeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938241E918896006D3856 /* PinCodeViewDelegate.swift */; };
@@ -17,10 +16,10 @@
 		B07CD5831E90F27100677A5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5821E90F27100677A5F /* Assets.xcassets */; };
 		B07CD5861E90F27100677A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5841E90F27100677A5F /* LaunchScreen.storyboard */; };
 		B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */; };
+		B0E13F2B1E925B9A00A29648 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeDigitSquareView.swift; path = ../../Source/PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
 		B01938211E918896006D3856 /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeSeparatorView.swift; sourceTree = "<group>"; };
 		B01938231E918896006D3856 /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
 		B01938241E918896006D3856 /* PinCodeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		B07CD5851E90F27100677A5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B07CD5871E90F27100677A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
+		B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 			children = (
 				B019381E1E918896006D3856 /* Source */,
 				B07CD57B1E90F27100677A5F /* AppDelegate.swift */,
-				B01938201E918896006D3856 /* PinCodeDigitSquareView.swift */,
+				B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */,
 				B07CD57D1E90F27100677A5F /* ViewController.swift */,
 				B07CD57F1E90F27100677A5F /* Main.storyboard */,
 				B07CD5821E90F27100677A5F /* Assets.xcassets */,
@@ -163,10 +163,10 @@
 			files = (
 				B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */,
 				B01938291E918896006D3856 /* PinCodeViewDelegate.swift in Sources */,
-				B01938261E918896006D3856 /* PinCodeDigitSquareView.swift in Sources */,
 				B07CD57E1E90F27100677A5F /* ViewController.swift in Sources */,
 				B07CD57C1E90F27100677A5F /* AppDelegate.swift in Sources */,
 				B01938281E918896006D3856 /* PinCodeView.swift in Sources */,
+				B0E13F2B1E925B9A00A29648 /* PinCodeDigitSquareView.swift in Sources */,
 				B01938271E918896006D3856 /* PinCodeSeparatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
