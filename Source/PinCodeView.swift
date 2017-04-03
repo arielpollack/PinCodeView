@@ -184,7 +184,7 @@ extension PinCodeView {
     override public func paste(_ sender: Any?) {
         guard let string = UIPasteboard.general.string else { return }
         let text: String
-        switch textType{
+        switch textType {
         case .numbers:
             text = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
             
@@ -192,7 +192,8 @@ extension PinCodeView {
             text = string.components(separatedBy: CharacterSet.alphanumerics.inverted).joined()
         }
         
-        insertText(text)
+        let index = text.index(text.startIndex, offsetBy: min(numberOfDigits, text.characters.count))
+        insertText(text.substring(to: index))
     }
     
     override public var canBecomeFirstResponder: Bool {
