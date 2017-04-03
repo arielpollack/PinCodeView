@@ -10,7 +10,7 @@ import UIKit
 
 public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     
-    public var state: PinCodeDigitViewState! {
+    public var state: PinCodeDigitViewState! = .empty {
         didSet {
             if state != oldValue {
                 configure(withState: state)
@@ -30,20 +30,17 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
         self.init(frame: .zero)
         
         self.textAlignment = .center
-        self.layer.borderWidth = 1
-        self.font = UIFont.systemFont(ofSize: 20)
-        self.state = .empty
+        self.font = UIFont.systemFont(ofSize: 30)
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 3
+        self.textColor = UIColor(colorLiteralRed: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
+        self.configure(withState: .empty)
         
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     public func configure(withState state: PinCodeDigitViewState) {
-        font = UIFont.systemFont(ofSize: 30)
-        layer.borderWidth = 2
-        layer.cornerRadius = 3
-        textColor = UIColor(colorLiteralRed: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
-        
         switch state {
         case .empty:
             layer.borderColor = UIColor(colorLiteralRed: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1).cgColor
