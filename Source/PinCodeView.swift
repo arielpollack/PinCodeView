@@ -20,6 +20,7 @@ fileprivate func ==(lhs: PinCodeView.State, rhs: PinCodeView.State) -> Bool {
         return index1 == index2
         
     case (.finished, .finished),
+         (.loading, .loading),
          (.disabled, .disabled):
         return true
         
@@ -37,6 +38,7 @@ public class PinCodeView: UIStackView {
     
     fileprivate enum State: Equatable {
         case inserting(Int)
+        case loading
         case finished
         case disabled
     }
@@ -192,13 +194,22 @@ public class PinCodeView: UIStackView {
         }
     }
     
+    fileprivate var canReceiveText: Bool {
+        return [.loading, .disabled].contains(digitState) == false
+    }
+    
     func submitDigits() {
-        digitState = .disabled
+        digitState = .loading
+        
         delegate?.pinCodeView(self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
             // we don't care about valid, the delegate will do something
             guard !isValid, let zelf = self else { return }
             
-            zelf.digitState = .finished
+            if zelf.digitState == .loading {
+                zelf.digitState = .finished
+            } else {
+                zelf.previousDigitState = .finished
+            }
             
             for digitView in zelf.digitViews {
                 digitView.state = .failedVerification
@@ -236,11 +247,11 @@ extension PinCodeView {
     }
     
     override public var canBecomeFirstResponder: Bool {
-        return true
+        return canReceiveText
     }
     
     override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        return action == #selector(paste(_:))
+        return canReceiveText && action == #selector(paste(_:))
     }
     
     public var keyboardType: UIKeyboardType {
@@ -287,7 +298,7 @@ extension PinCodeView: UIKeyInput {
     }
     
     public func insertText(_ text: String) {
-        if case .disabled = digitState { return }
+        guard canReceiveText else { return }
         
         // if inserting more than 1 character, reset all values and put new text
         guard text.characters.count == 1 else {
@@ -323,6 +334,8 @@ extension PinCodeView: UIKeyInput {
     }
     
     public func deleteBackward() {
+        guard canReceiveText else { return }
+        
         delegate?.pinCodeView(self, didInsertText: "")
         
         switch digitState {
