@@ -14,6 +14,20 @@ public enum PinCodeDigitViewState {
     case failedVerification
 }
 
+fileprivate func ==(lhs: PinCodeView.State, rhs: PinCodeView.State) -> Bool {
+    switch (lhs, rhs) {
+    case (.inserting(let index1), .inserting(let index2)):
+        return index1 == index2
+        
+    case (.finished, .finished),
+         (.disabled, .disabled):
+        return true
+        
+    default:
+        return false
+    }
+}
+
 public class PinCodeView: UIStackView {
     
     public enum TextType {
@@ -21,7 +35,7 @@ public class PinCodeView: UIStackView {
         case numbersAndLetters
     }
     
-    fileprivate enum State {
+    fileprivate enum State: Equatable {
         case inserting(Int)
         case finished
         case disabled
@@ -44,6 +58,21 @@ public class PinCodeView: UIStackView {
     
     /// space between items
     public var itemSpacing: Int = 2
+    
+    private var previousDigitState: State?
+    public var isEnabled: Bool {
+        get { return digitState != .disabled }
+        set {
+            if newValue == isEnabled { return }
+            
+            if !newValue {
+                previousDigitState = digitState
+                digitState = .disabled
+            } else if let previousState = previousDigitState {
+                digitState = previousState
+            }
+        }
+    }
     
     fileprivate var digitViews = [PinCodeDigitView]()
     fileprivate var digitState: State = .inserting(0) {
@@ -151,6 +180,10 @@ public class PinCodeView: UIStackView {
         return digitViews.reduce("", { text, digitView in
             return text + (digitView.digit ?? "")
         })
+    }
+    
+    public func resetDigits() {
+        digitState = .inserting(0)
     }
     
     func clearText() {
