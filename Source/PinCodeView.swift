@@ -221,9 +221,9 @@ public class PinCodeView: UIStackView {
     
     private func animateFailure() {
         let anim = CABasicAnimation(keyPath: "position")
-        anim.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 10, y: center.y))
-        anim.toValue = NSValue(cgPoint: CGPoint(x: center.x + 10, y: center.y))
-        anim.duration = 0.05
+        anim.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 5, y: center.y))
+        anim.toValue = NSValue(cgPoint: CGPoint(x: center.x + 5, y: center.y))
+        anim.duration = 0.07
         anim.repeatCount = 2
         anim.autoreverses = true
         layer.add(anim, forKey: "position")
