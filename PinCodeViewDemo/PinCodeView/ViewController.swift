@@ -19,6 +19,18 @@ class ViewController: UIViewController {
             pinView.digitViewInit = PinCodeDigitSquareView.init
         }
     }
+	
+	@IBOutlet weak var pinView2: PinCodeView! {
+		didSet {
+			pinView2.delegate = self
+			pinView2.numberOfDigits = 4
+			pinView2.groupingSize = 0
+			pinView2.itemSpacing = 10
+			pinView2.distribution = .fillEqually
+			pinView2.digitViewInit = PinCodeDigitField.init
+		}
+	}
+
 }
 
 extension ViewController: PinCodeViewDelegate {

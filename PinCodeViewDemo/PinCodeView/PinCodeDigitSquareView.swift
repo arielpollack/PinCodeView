@@ -10,10 +10,10 @@ import UIKit
 
 public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     
-    public var state: PinCodeDigitViewState! = .empty {
+    public var viewState: PinCodeDigitViewState! = .empty {
         didSet {
-            if state != oldValue {
-                configure(withState: state)
+            if viewState != oldValue {
+                configure(withState: viewState)
             }
         }
     }
@@ -21,7 +21,7 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     public var digit: String? {
         didSet {
             guard digit != oldValue else { return }
-            self.state = digit != nil ? .hasDigit : .empty
+            self.viewState = digit != nil ? .hasDigit : .empty
             self.text = digit
         }
     }

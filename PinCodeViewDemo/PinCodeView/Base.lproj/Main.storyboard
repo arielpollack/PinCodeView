@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="126" width="200" height="67"/>
+                                <rect key="frame" x="88" y="126" width="200" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="386-th-uIY"/>
                                     <constraint firstAttribute="height" constant="67" id="kSi-5Q-sCD"/>
@@ -42,19 +42,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdF-sl-uAI" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
+                                <rect key="frame" x="87" y="344" width="200" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="i5y-5E-KK0"/>
+                                    <constraint firstAttribute="height" constant="67" id="z9H-TL-KhC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfDigits">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the PIN (secure text entry fields):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCd-Mm-8sc">
+                                <rect key="frame" x="49" y="268" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RdF-sl-uAI" firstAttribute="top" secondItem="cCd-Mm-8sc" secondAttribute="bottom" constant="55" id="20I-Qg-4GF"/>
                             <constraint firstItem="nnW-L7-vBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Vc-R8-Z1v"/>
                             <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
                             <constraint firstItem="kD9-6C-Dh1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="8hS-V3-tmD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RdF-sl-uAI" secondAttribute="bottom" constant="256" id="Kyv-Rx-LnV"/>
+                            <constraint firstItem="RdF-sl-uAI" firstAttribute="centerX" secondItem="kD9-6C-Dh1" secondAttribute="centerX" id="Q4I-kA-aRY"/>
                             <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="kD9-6C-Dh1" secondAttribute="bottom" constant="55" id="ZU0-Ax-msx"/>
                             <constraint firstItem="kD9-6C-Dh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGX-rb-5e7"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
+                            <constraint firstItem="cCd-Mm-8sc" firstAttribute="leading" secondItem="kD9-6C-Dh1" secondAttribute="leading" id="yHV-I0-bxW"/>
+                            <constraint firstItem="RdF-sl-uAI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="71" id="z9i-7B-VLL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pinView" destination="nnW-L7-vBh" id="aui-TP-vc3"/>
+                        <outlet property="pinView2" destination="RdF-sl-uAI" id="TnV-aC-by6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

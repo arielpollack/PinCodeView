@@ -17,6 +17,7 @@
 		B07CD5861E90F27100677A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5841E90F27100677A5F /* LaunchScreen.storyboard */; };
 		B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */; };
 		B0E13F2B1E925B9A00A29648 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */; };
+		B8ED6B4E1ECE553B00D69EB8 /* PinCodeDigitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B07CD5871E90F27100677A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
 		B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
+		B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				B019381E1E918896006D3856 /* Source */,
 				B07CD57B1E90F27100677A5F /* AppDelegate.swift */,
 				B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */,
+				B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */,
 				B07CD57D1E90F27100677A5F /* ViewController.swift */,
 				B07CD57F1E90F27100677A5F /* Main.storyboard */,
 				B07CD5821E90F27100677A5F /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */,
+				B8ED6B4E1ECE553B00D69EB8 /* PinCodeDigitField.swift in Sources */,
 				B01938291E918896006D3856 /* PinCodeViewDelegate.swift in Sources */,
 				B07CD57E1E90F27100677A5F /* ViewController.swift in Sources */,
 				B07CD57C1E90F27100677A5F /* AppDelegate.swift in Sources */,
