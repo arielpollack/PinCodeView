@@ -212,7 +212,7 @@ public class PinCodeView: UIStackView {
             }
             
             for digitView in zelf.digitViews {
-                digitView.state = .failedVerification
+                digitView.viewState = .failedVerification
             }
             
             zelf.animateFailure()
