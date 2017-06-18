@@ -14,11 +14,11 @@ Pod::Spec.new do |s|
 	A drop in view for getting pin code from the user.
 	Main use case is input for codes received in SMS/email etc.
                    DESC
-  s.homepage     = "http://www.github.com/dapulse/PinCodeView"
+  s.homepage     = "http://www.github.com/arielpollack/PinCodeView"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author       = { "Ariel Pollack" => "pollack.ariel@gmail.com" }
   s.platform     = :ios, '9.0'
-  s.source       = { :git => "https://github.com/dapulse/PinCodeView.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => s.version.to_s }
   s.source_files = "Source/", "Source/*.swift"
 
 end
