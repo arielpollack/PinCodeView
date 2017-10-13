@@ -11,7 +11,7 @@ import UIKit
 public protocol PinCodeDigitView: class {
     init()
     var digit: String? { get set }
-    var state: PinCodeDigitViewState! { get set }
+    var viewState: PinCodeDigitViewState! { get set }
     func configure(withState: PinCodeDigitViewState)
     
     // hackish way to constraint to UIView only

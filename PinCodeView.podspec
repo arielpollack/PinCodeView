@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PinCodeView"
-  s.version      = "0.2.0"
+  s.version      = "0.3.0"
   s.summary 	 = "A drop in view for pin code input"
   s.description  = <<-DESC
 	A drop in view for getting pin code from the user.
@@ -20,5 +20,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => s.version.to_s }
   s.source_files = "Source/", "Source/*.swift"
+  s.xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
 end

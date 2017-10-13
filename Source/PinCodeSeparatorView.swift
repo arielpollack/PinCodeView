@@ -10,12 +10,12 @@ import UIKit
 
 class PinCodeSeparatorView: UILabel {
 
-    init(text: String) {
+    @objc init(text: String) {
         super.init(frame: .zero)
         self.text = text
         self.font = UIFont.systemFont(ofSize: 30)
         self.textAlignment = .center
-        self.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
+        self.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
         self.sizeToFit()
     }
     

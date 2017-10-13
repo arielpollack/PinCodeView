@@ -48,21 +48,21 @@ public class PinCodeView: UIStackView {
     public var textType: TextType = .numbers
     
     /// initializer for the single digit views
-    public var digitViewInit: ((Void) -> PinCodeDigitView)!
+    public var digitViewInit: (() -> PinCodeDigitView)!
     
     /// pretty straightforward
-    public var numberOfDigits: Int = 6
+    @objc public var numberOfDigits: Int = 6
     
     /// group size for separating digits
     /// for example:
     /// group size of 3 will give ___ - ___
-    public var groupingSize: Int = 3
+    @objc public var groupingSize: Int = 3
     
     /// space between items
-    public var itemSpacing: Int = 2
+    @objc public var itemSpacing: Int = 2
     
     private var previousDigitState: State?
-    public var isEnabled: Bool {
+    @objc public var isEnabled: Bool {
         get { return digitState != .disabled }
         set {
             if newValue == isEnabled { return }
@@ -161,12 +161,12 @@ public class PinCodeView: UIStackView {
         }
     }
     
-    func didTap() {
+    @objc func didTap() {
         guard !self.isFirstResponder else { return }
         becomeFirstResponder()
     }
     
-    func didLongPress(gesture: UILongPressGestureRecognizer) {
+    @objc func didLongPress(gesture: UILongPressGestureRecognizer) {
         guard gesture.state == .began else { return }
         
         if !self.isFirstResponder  {
@@ -184,11 +184,11 @@ public class PinCodeView: UIStackView {
         })
     }
     
-    public func resetDigits() {
+    @objc public func resetDigits() {
         digitState = .inserting(0)
     }
     
-    func clearText() {
+    @objc func clearText() {
         for digitView in digitViews {
             digitView.digit = nil
         }
@@ -198,7 +198,7 @@ public class PinCodeView: UIStackView {
         return [.loading, .disabled].contains(digitState) == false
     }
     
-    func submitDigits() {
+    @objc func submitDigits() {
         digitState = .loading
         
         delegate?.pinCodeView(self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
@@ -212,7 +212,7 @@ public class PinCodeView: UIStackView {
             }
             
             for digitView in zelf.digitViews {
-                digitView.state = .failedVerification
+                digitView.viewState = .failedVerification
             }
             
             zelf.animateFailure()
@@ -243,7 +243,7 @@ extension PinCodeView {
         }
         
         let index = text.index(text.startIndex, offsetBy: min(numberOfDigits, text.characters.count))
-        insertText(text.substring(to: index))
+        insertText(String(text[..<index]))
     }
     
     override public var canBecomeFirstResponder: Bool {

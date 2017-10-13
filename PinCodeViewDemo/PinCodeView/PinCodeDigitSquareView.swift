@@ -10,18 +10,18 @@ import UIKit
 
 public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     
-    public var state: PinCodeDigitViewState! = .empty {
+    public var viewState: PinCodeDigitViewState! = .empty {
         didSet {
-            if state != oldValue {
-                configure(withState: state)
+            if viewState != oldValue {
+                configure(withState: viewState)
             }
         }
     }
     
-    public var digit: String? {
+    @objc public var digit: String? {
         didSet {
             guard digit != oldValue else { return }
-            self.state = digit != nil ? .hasDigit : .empty
+            self.viewState = digit != nil ? .hasDigit : .empty
             self.text = digit
         }
     }
@@ -33,7 +33,7 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
         self.font = UIFont.systemFont(ofSize: 30)
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 3
-        self.textColor = UIColor(colorLiteralRed: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
+        self.textColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
         self.configure(withState: .empty)
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -43,13 +43,13 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     public func configure(withState state: PinCodeDigitViewState) {
         switch state {
         case .empty:
-            layer.borderColor = UIColor(colorLiteralRed: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1).cgColor
             
         case .hasDigit:
-            layer.borderColor = UIColor(colorLiteralRed: 0, green: 161.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 0, green: 161.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
             
         case .failedVerification:
-            layer.borderColor = UIColor(colorLiteralRed: 246.0/255.0, green: 95.0/255.0, blue: 124.0/255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 246.0/255.0, green: 95.0/255.0, blue: 124.0/255.0, alpha: 1).cgColor
         }
     }
 }

@@ -17,6 +17,7 @@
 		B07CD5861E90F27100677A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07CD5841E90F27100677A5F /* LaunchScreen.storyboard */; };
 		B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */; };
 		B0E13F2B1E925B9A00A29648 /* PinCodeDigitSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */; };
+		B8ED6B4E1ECE553B00D69EB8 /* PinCodeDigitField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B07CD5871E90F27100677A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E13F261E9256AC00A29648 /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
 		B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitSquareView.swift; sourceTree = "<group>"; };
+		B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				B019381E1E918896006D3856 /* Source */,
 				B07CD57B1E90F27100677A5F /* AppDelegate.swift */,
 				B0E13F2A1E925B9A00A29648 /* PinCodeDigitSquareView.swift */,
+				B8ED6B4D1ECE553B00D69EB8 /* PinCodeDigitField.swift */,
 				B07CD57D1E90F27100677A5F /* ViewController.swift */,
 				B07CD57F1E90F27100677A5F /* Main.storyboard */,
 				B07CD5821E90F27100677A5F /* Assets.xcassets */,
@@ -115,12 +118,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Dapulse;
 				TargetAttributes = {
 					B07CD5771E90F27100677A5F = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = F92RQULD22;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -162,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E13F271E9256AC00A29648 /* PinCodeDigitView.swift in Sources */,
+				B8ED6B4E1ECE553B00D69EB8 /* PinCodeDigitField.swift in Sources */,
 				B01938291E918896006D3856 /* PinCodeViewDelegate.swift in Sources */,
 				B07CD57E1E90F27100677A5F /* ViewController.swift in Sources */,
 				B07CD57C1E90F27100677A5F /* AppDelegate.swift in Sources */,
@@ -203,7 +208,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -211,7 +218,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -254,7 +265,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -262,7 +275,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -298,7 +315,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -312,7 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
