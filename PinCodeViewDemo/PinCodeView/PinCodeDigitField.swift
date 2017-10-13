@@ -23,7 +23,7 @@ public class PinCodeDigitField: UITextField, PinCodeDigitView {
         }
     }
 
-    public var digit: String? {
+    @objc public var digit: String? {
         didSet {
             guard digit != oldValue else { return }
             self.viewState = digit != nil ? .hasDigit : .empty
@@ -46,7 +46,7 @@ public class PinCodeDigitField: UITextField, PinCodeDigitView {
 		translatesAutoresizingMaskIntoConstraints = false
 		widthAnchor.constraint(equalToConstant: 40).isActive = true
 
-		self.textColor = UIColor(colorLiteralRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1)
+		self.textColor = UIColor(red: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1)
 		self.backgroundColor = UIColor.white
 
 		self.configure(withState: .empty)
@@ -55,13 +55,13 @@ public class PinCodeDigitField: UITextField, PinCodeDigitView {
     public func configure(withState state: PinCodeDigitViewState) {
         switch state {
         case .empty:
-            layer.borderColor = UIColor(colorLiteralRed: 202.0 / 255.0, green: 202.0 / 255.0, blue: 202.0 / 255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 202.0 / 255.0, green: 202.0 / 255.0, blue: 202.0 / 255.0, alpha: 1).cgColor
 
         case .hasDigit:
-            layer.borderColor = UIColor(colorLiteralRed: 0, green: 161.0 / 255.0, blue: 230.0 / 255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 0, green: 161.0 / 255.0, blue: 230.0 / 255.0, alpha: 1).cgColor
 
         case .failedVerification:
-            layer.borderColor = UIColor(colorLiteralRed: 246.0 / 255.0, green: 95.0 / 255.0, blue: 124.0 / 255.0, alpha: 1).cgColor
+            layer.borderColor = UIColor(red: 246.0 / 255.0, green: 95.0 / 255.0, blue: 124.0 / 255.0, alpha: 1).cgColor
         }
     }
 }

@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: PinCodeViewDelegate {
-    func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
+    @objc func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
         
         view.alpha = 0.5
         
