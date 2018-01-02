@@ -25,7 +25,7 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
             self.text = digit
         }
     }
-    
+        
     convenience required public init() {
         self.init(frame: .zero)
         
@@ -33,7 +33,7 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
         self.font = UIFont.systemFont(ofSize: 30)
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 3
-        self.textColor = UIColor(colorLiteralRed: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
+        self.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         self.configure(withState: .empty)
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -43,13 +43,13 @@ public class PinCodeDigitSquareView: UILabel, PinCodeDigitView {
     public func configure(withState state: PinCodeDigitViewState) {
         switch state {
         case .empty:
-            layer.borderColor = UIColor(colorLiteralRed: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1).cgColor
+            layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1).cgColor
             
         case .hasDigit:
-            layer.borderColor = UIColor(colorLiteralRed: 0, green: 161.0/255.0, blue: 230.0/255.0, alpha: 1).cgColor
+            layer.borderColor = #colorLiteral(red: 0, green: 0.631372549, blue: 0.9019607843, alpha: 1).cgColor
             
         case .failedVerification:
-            layer.borderColor = UIColor(colorLiteralRed: 246.0/255.0, green: 95.0/255.0, blue: 124.0/255.0, alpha: 1).cgColor
+            layer.borderColor = #colorLiteral(red: 0.9647058824, green: 0.3725490196, blue: 0.4862745098, alpha: 1).cgColor
         }
     }
 }
