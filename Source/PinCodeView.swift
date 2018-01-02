@@ -203,19 +203,19 @@ public class PinCodeView: UIStackView {
         
         delegate?.pinCodeView(self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
             // we don't care about valid, the delegate will do something
-            guard !isValid, let zelf = self else { return }
+            guard !isValid, let `self` = self else { return }
             
-            if zelf.digitState == .loading {
-                zelf.digitState = .finished
+            if self.digitState == .loading {
+                self.digitState = .finished
             } else {
-                zelf.previousDigitState = .finished
+                self.previousDigitState = .finished
             }
             
-            for digitView in zelf.digitViews {
+            for digitView in self.digitViews {
                 digitView.state = .failedVerification
             }
             
-            zelf.animateFailure()
+            self.animateFailure()
         })
     }
     
@@ -255,17 +255,12 @@ extension PinCodeView {
     }
     
     public var keyboardType: UIKeyboardType {
-        get {
-            switch textType {
-            case .numbers:
-                return .numberPad
-                
-            case .numbersAndLetters:
-                return .default
-            }
-        }
-        set {
-            // ignore manual user set
+        switch textType {
+        case .numbers:
+            return .numberPad
+            
+        case .numbersAndLetters:
+            return .default
         }
     }
 }
