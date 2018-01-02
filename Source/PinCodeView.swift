@@ -136,9 +136,9 @@ public class PinCodeView: UIStackView {
         digitViews = []
         
         for _ in 0..<numberOfDigits {
-            let digitView = digitViewInit()
-            digitView.view.translatesAutoresizingMaskIntoConstraints = false
-            self.addArrangedSubview(digitView.view)
+            let digitView = PinCodeDigitSquareView()
+            digitView.translatesAutoresizingMaskIntoConstraints = false
+            self.addArrangedSubview(digitView)
             digitViews.append(digitView)
         }
         
