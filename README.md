@@ -70,18 +70,12 @@ The view is implemented to allow customization for the single digit views.
 So, all you have to to is implement your own view that conform to `PinCodeDigitView`:
 
 ```swift
-public protocol PinCodeDigitView: class {
-    init()
+public protocol PinCodeDigitView: class where Self: UIView {
     var digit: String? { get set }
     var state: PinCodeDigitViewState! { get set }
     func configure(withState: PinCodeDigitViewState)
-    
-    // hackish way to constraint to UIView only
-    var view: UIView { get }
 }
 ```
-
-(note: if you have a better way to make it require the class to be UIView subclass create a pull request plz)
 
 ## License
 

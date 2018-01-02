@@ -48,7 +48,7 @@ public class PinCodeView: UIStackView {
     public var textType: TextType = .numbers
     
     /// initializer for the single digit views
-    public var digitViewInit: ((Void) -> PinCodeDigitView)!
+    public var digitViewInit: (() -> PinCodeDigitView)!
     
     /// pretty straightforward
     public var numberOfDigits: Int = 6
@@ -136,9 +136,9 @@ public class PinCodeView: UIStackView {
         digitViews = []
         
         for _ in 0..<numberOfDigits {
-            let digitView = digitViewInit()
-            digitView.view.translatesAutoresizingMaskIntoConstraints = false
-            self.addArrangedSubview(digitView.view)
+            let digitView = PinCodeDigitSquareView()
+            digitView.translatesAutoresizingMaskIntoConstraints = false
+            self.addArrangedSubview(digitView)
             digitViews.append(digitView)
         }
         
@@ -161,12 +161,12 @@ public class PinCodeView: UIStackView {
         }
     }
     
-    func didTap() {
+    @objc func didTap() {
         guard !self.isFirstResponder else { return }
         becomeFirstResponder()
     }
     
-    func didLongPress(gesture: UILongPressGestureRecognizer) {
+    @objc func didLongPress(gesture: UILongPressGestureRecognizer) {
         guard gesture.state == .began else { return }
         
         if !self.isFirstResponder  {
@@ -203,19 +203,19 @@ public class PinCodeView: UIStackView {
         
         delegate?.pinCodeView(self, didSubmitPinCode: text, isValidCallback: { [weak self] (isValid) in
             // we don't care about valid, the delegate will do something
-            guard !isValid, let zelf = self else { return }
+            guard !isValid, let `self` = self else { return }
             
-            if zelf.digitState == .loading {
-                zelf.digitState = .finished
+            if self.digitState == .loading {
+                self.digitState = .finished
             } else {
-                zelf.previousDigitState = .finished
+                self.previousDigitState = .finished
             }
             
-            for digitView in zelf.digitViews {
+            for digitView in self.digitViews {
                 digitView.state = .failedVerification
             }
             
-            zelf.animateFailure()
+            self.animateFailure()
         })
     }
     
@@ -242,8 +242,8 @@ extension PinCodeView {
             text = string.components(separatedBy: CharacterSet.alphanumerics.inverted).joined()
         }
         
-        let index = text.index(text.startIndex, offsetBy: min(numberOfDigits, text.characters.count))
-        insertText(text.substring(to: index))
+        let index = text.index(text.startIndex, offsetBy: min(numberOfDigits, text.count))
+        insertText(String(text[..<index]))
     }
     
     override public var canBecomeFirstResponder: Bool {
@@ -255,28 +255,23 @@ extension PinCodeView {
     }
     
     public var keyboardType: UIKeyboardType {
-        get {
-            switch textType {
-            case .numbers:
-                return .numberPad
-                
-            case .numbersAndLetters:
-                return .default
-            }
-        }
-        set {
-            // ignore manual user set
+        switch textType {
+        case .numbers:
+            return .numberPad
+            
+        case .numbersAndLetters:
+            return .default
         }
     }
 }
 
 extension PinCodeView: UIKeyInput {
     public var hasText: Bool {
-        return text.characters.count > 0
+        return text.count > 0
     }
     
     private func isValidText(_ text: String) -> Bool {
-        guard text.characters.count > 0 else {
+        guard text.count > 0 else {
             return false
         }
         
@@ -301,9 +296,9 @@ extension PinCodeView: UIKeyInput {
         guard canReceiveText else { return }
         
         // if inserting more than 1 character, reset all values and put new text
-        guard text.characters.count == 1 else {
+        guard text.count == 1 else {
             digitState = .inserting(0)
-            text.characters.map({ "\($0)" }).forEach(insertText)
+            text.map({ "\($0)" }).forEach(insertText)
             return
         }
         

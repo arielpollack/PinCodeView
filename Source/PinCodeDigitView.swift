@@ -8,18 +8,8 @@
 
 import UIKit
 
-public protocol PinCodeDigitView: class {
-    init()
+public protocol PinCodeDigitView: class where Self: UIView  {
     var digit: String? { get set }
     var state: PinCodeDigitViewState! { get set }
     func configure(withState: PinCodeDigitViewState)
-    
-    // hackish way to constraint to UIView only
-    var view: UIView { get }
-}
-
-public extension PinCodeDigitView where Self: UIView {
-    var view: UIView {
-        return self
-    }
 }
