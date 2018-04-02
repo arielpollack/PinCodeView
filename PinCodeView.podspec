@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PinCodeView"
-  s.version      = "0.2.0"
+  s.version      = "0.3.0"
   s.summary 	 = "A drop in view for pin code input"
   s.description  = <<-DESC
 	A drop in view for getting pin code from the user.
@@ -19,6 +19,19 @@ Pod::Spec.new do |s|
   s.author       = { "Ariel Pollack" => "pollack.ariel@gmail.com" }
   s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/arielpollack/PinCodeView.git", :tag => s.version.to_s }
-  s.source_files = "Source/", "Source/*.swift"
+  s.default_subspec = "Core"
+  s.swift_version = '4.0'
+
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Source/PinCodeView/"
+    ss.framework  = "Foundation"
+  end
+
+  s.subspec "RxSwift" do |ss|
+    ss.source_files  = "Source/RxSwift/"
+    ss.dependency "PinCodeView/Core"
+    ss.dependency "RxSwift"
+    ss.dependency "RxCocoa"
+  end
 
 end

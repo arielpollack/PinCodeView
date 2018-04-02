@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B01938181E918716006D3856 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B01938121E918716006D3856 /* Info.plist */; };
-		B01938191E918716006D3856 /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938131E918716006D3856 /* PinCodeDigitView.swift */; };
-		B019381A1E918716006D3856 /* PinCodeSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938141E918716006D3856 /* PinCodeSeparatorView.swift */; };
-		B019381B1E918716006D3856 /* PinCodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = B01938151E918716006D3856 /* PinCodeView.h */; };
-		B019381C1E918716006D3856 /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938161E918716006D3856 /* PinCodeView.swift */; };
-		B019381D1E918716006D3856 /* PinCodeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01938171E918716006D3856 /* PinCodeViewDelegate.swift */; };
+		B0AF130C207253330052E7A4 /* PinCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF1306207253330052E7A4 /* PinCodeView.swift */; };
+		B0AF130D207253330052E7A4 /* PinCodeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF1307207253330052E7A4 /* PinCodeViewDelegate.swift */; };
+		B0AF130E207253330052E7A4 /* PinCodeSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF1308207253330052E7A4 /* PinCodeSeparatorView.swift */; };
+		B0AF130F207253330052E7A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0AF1309207253330052E7A4 /* Info.plist */; };
+		B0AF1310207253330052E7A4 /* PinCodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AF130A207253330052E7A4 /* PinCodeDigitView.swift */; };
+		B0AF1311207253330052E7A4 /* PinCodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = B0AF130B207253330052E7A4 /* PinCodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B01937FE1E918567006D3856 /* PinCodeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PinCodeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B01938121E918716006D3856 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B01938131E918716006D3856 /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeDigitView.swift; sourceTree = "<group>"; };
-		B01938141E918716006D3856 /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeSeparatorView.swift; sourceTree = "<group>"; };
-		B01938151E918716006D3856 /* PinCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinCodeView.h; sourceTree = "<group>"; };
-		B01938161E918716006D3856 /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeView.swift; sourceTree = "<group>"; };
-		B01938171E918716006D3856 /* PinCodeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCodeViewDelegate.swift; sourceTree = "<group>"; };
+		B0AF1306207253330052E7A4 /* PinCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeView.swift; path = PinCodeView/PinCodeView.swift; sourceTree = "<group>"; };
+		B0AF1307207253330052E7A4 /* PinCodeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeViewDelegate.swift; path = PinCodeView/PinCodeViewDelegate.swift; sourceTree = "<group>"; };
+		B0AF1308207253330052E7A4 /* PinCodeSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeSeparatorView.swift; path = PinCodeView/PinCodeSeparatorView.swift; sourceTree = "<group>"; };
+		B0AF1309207253330052E7A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PinCodeView/Info.plist; sourceTree = "<group>"; };
+		B0AF130A207253330052E7A4 /* PinCodeDigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinCodeDigitView.swift; path = PinCodeView/PinCodeDigitView.swift; sourceTree = "<group>"; };
+		B0AF130B207253330052E7A4 /* PinCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinCodeView.h; path = PinCodeView/PinCodeView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +55,12 @@
 		B01938111E918716006D3856 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B01938121E918716006D3856 /* Info.plist */,
-				B01938131E918716006D3856 /* PinCodeDigitView.swift */,
-				B01938141E918716006D3856 /* PinCodeSeparatorView.swift */,
-				B01938151E918716006D3856 /* PinCodeView.h */,
-				B01938161E918716006D3856 /* PinCodeView.swift */,
-				B01938171E918716006D3856 /* PinCodeViewDelegate.swift */,
+				B0AF1309207253330052E7A4 /* Info.plist */,
+				B0AF130A207253330052E7A4 /* PinCodeDigitView.swift */,
+				B0AF1308207253330052E7A4 /* PinCodeSeparatorView.swift */,
+				B0AF130B207253330052E7A4 /* PinCodeView.h */,
+				B0AF1306207253330052E7A4 /* PinCodeView.swift */,
+				B0AF1307207253330052E7A4 /* PinCodeViewDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -72,7 +72,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B019381B1E918716006D3856 /* PinCodeView.h in Headers */,
+				B0AF1311207253330052E7A4 /* PinCodeView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +108,7 @@
 				TargetAttributes = {
 					B01937FD1E918567006D3856 = {
 						CreatedOnToolsVersion = 8.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -135,7 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B01938181E918716006D3856 /* Info.plist in Resources */,
+				B0AF130F207253330052E7A4 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B019381D1E918716006D3856 /* PinCodeViewDelegate.swift in Sources */,
-				B01938191E918716006D3856 /* PinCodeDigitView.swift in Sources */,
-				B019381A1E918716006D3856 /* PinCodeSeparatorView.swift in Sources */,
-				B019381C1E918716006D3856 /* PinCodeView.swift in Sources */,
+				B0AF130D207253330052E7A4 /* PinCodeViewDelegate.swift in Sources */,
+				B0AF130C207253330052E7A4 /* PinCodeView.swift in Sources */,
+				B0AF130E207253330052E7A4 /* PinCodeSeparatorView.swift in Sources */,
+				B0AF1310207253330052E7A4 /* PinCodeDigitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,14 +266,16 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PinCodeView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/PinCodeView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -286,13 +288,15 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PinCodeView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/PinCodeView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dapulse.PinCodeView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -315,6 +319,7 @@
 				B01938081E918567006D3856 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

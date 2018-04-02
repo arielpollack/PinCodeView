@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+
+target 'PinCodeView' do
+  use_frameworks!
+
+  pod 'PinCodeView/Core', :path => '../'
+  pod 'PinCodeView/RxSwift', :path => '../'
+
+end
