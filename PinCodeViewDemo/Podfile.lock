@@ -1,0 +1,26 @@
+PODS:
+  - PinCodeView/Core (0.3.0)
+  - PinCodeView/RxSwift (0.3.0):
+    - PinCodeView/Core
+    - RxCocoa
+    - RxSwift
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - PinCodeView/Core (from `../`)
+  - PinCodeView/RxSwift (from `../`)
+
+EXTERNAL SOURCES:
+  PinCodeView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PinCodeView: d13dd98bb1f79d53f5f699d6422d1c7c2d1dae8c
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: 5699376e337991fe3270d26b1920e6fde00a83c0
+
+COCOAPODS: 1.4.0

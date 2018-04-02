@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import PinCodeView
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
     
@@ -21,7 +24,31 @@ class ViewController: UIViewController {
     }
 }
 
+class RxViewController: ViewController {
+
+    private let disposeBag = DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        pinView.rx
+            .didSubmit
+            .subscribe(onNext: { [weak self] code in
+                self?.submit(code: code)
+        })
+        .disposed(by: disposeBag)
+    }
+
+    fileprivate func submit(code: String) {
+
+    }
+}
+
 extension ViewController: PinCodeViewDelegate {
+    func pinCodeView(_ view: PinCodeView, didInsertText text: String) {
+        
+    }
+
     func pinCodeView(_ view: PinCodeView, didSubmitPinCode code: String, isValidCallback callback: @escaping (Bool) -> Void) {
         
         view.alpha = 0.5

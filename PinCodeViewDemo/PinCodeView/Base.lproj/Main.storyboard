@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bvb-SE-B4r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PinCodeView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PinCodeViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,23 +21,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="126" width="200" height="67"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnW-L7-vBh" customClass="PinCodeView" customModule="PinCodeView">
+                                <rect key="frame" x="87.5" y="170" width="200" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="386-th-uIY"/>
                                     <constraint firstAttribute="height" constant="67" id="kSi-5Q-sCD"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfDigits">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the PIN your received by SMS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-6C-Dh1">
-                                <rect key="frame" x="49" y="50" width="277" height="21"/>
+                                <rect key="frame" x="49" y="94" width="277" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jof-rV-Twm">
+                                <rect key="frame" x="130" y="337" width="114" height="30"/>
+                                <state key="normal" title="RxSwift Example"/>
+                                <connections>
+                                    <segue destination="0ty-YQ-DeO" kind="show" id="JMU-VG-Zzj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Vc-R8-Z1v"/>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
+                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="8hS-V3-tmD"/>
+                            <constraint firstItem="jof-rV-Twm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FsI-Gn-tYA"/>
+                            <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="kD9-6C-Dh1" secondAttribute="bottom" constant="55" id="ZU0-Ax-msx"/>
+                            <constraint firstItem="jof-rV-Twm" firstAttribute="top" secondItem="nnW-L7-vBh" secondAttribute="bottom" constant="100" id="i1K-6V-I1h"/>
+                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGX-rb-5e7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y0h-Xh-6E4"/>
+                    <connections>
+                        <outlet property="pinView" destination="nnW-L7-vBh" id="aui-TP-vc3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.2" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rbz-Oe-6yy">
+            <objects>
+                <viewController id="0ty-YQ-DeO" customClass="ViewController" customModule="PinCodeViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YZn-h3-gJl"/>
+                        <viewControllerLayoutGuide type="bottom" id="GzA-Dj-7Wh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eLH-XU-rPI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Va9-Wd-b32" customClass="PinCodeView" customModule="PinCodeView">
+                                <rect key="frame" x="87.5" y="170" width="200" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="dhI-Wr-Gm4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="mHv-H8-KBV"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the PIN your received by SMS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-yW-Rgn">
+                                <rect key="frame" x="49" y="94" width="277" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,20 +91,39 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="nnW-L7-vBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Vc-R8-Z1v"/>
-                            <constraint firstItem="nnW-L7-vBh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7QV-eK-rBM"/>
-                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="8hS-V3-tmD"/>
-                            <constraint firstItem="nnW-L7-vBh" firstAttribute="top" secondItem="kD9-6C-Dh1" secondAttribute="bottom" constant="55" id="ZU0-Ax-msx"/>
-                            <constraint firstItem="kD9-6C-Dh1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rGX-rb-5e7"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nnW-L7-vBh" secondAttribute="trailing" constant="20" id="xt4-ZL-wap"/>
+                            <constraint firstItem="YzK-yW-Rgn" firstAttribute="centerX" secondItem="eLH-XU-rPI" secondAttribute="centerX" id="Abo-6i-0bg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Va9-Wd-b32" secondAttribute="trailing" constant="20" id="C6P-bC-z8J"/>
+                            <constraint firstItem="YzK-yW-Rgn" firstAttribute="top" secondItem="YZn-h3-gJl" secondAttribute="bottom" constant="30" id="Hc1-q2-Xmh"/>
+                            <constraint firstItem="Va9-Wd-b32" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLH-XU-rPI" secondAttribute="leading" constant="20" id="IcM-31-omA"/>
+                            <constraint firstItem="Va9-Wd-b32" firstAttribute="top" secondItem="YzK-yW-Rgn" secondAttribute="bottom" constant="55" id="cNF-gN-9s4"/>
+                            <constraint firstItem="Va9-Wd-b32" firstAttribute="centerX" secondItem="eLH-XU-rPI" secondAttribute="centerX" id="isg-cp-w0V"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pinView" destination="nnW-L7-vBh" id="aui-TP-vc3"/>
+                        <outlet property="pinView" destination="Va9-Wd-b32" id="F3C-ro-zeb"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rN0-7X-Jrd" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1832.8" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gCD-MG-ENa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bvb-SE-B4r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jdB-ZL-17Y">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bJZ-EY-Hfe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cq4-OX-dyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="353" y="139"/>
         </scene>
     </scenes>
 </document>
